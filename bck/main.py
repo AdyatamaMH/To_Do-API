@@ -24,6 +24,26 @@ tasks = [
 ]
 
 
+class User(BaseModel):
+    id: int
+    username: str
+
+users = [
+    User(id=1, username="user1"),
+    User(id=2, username="user2")
+]
+
+
+@app.get("/users/{user_id}/tasks/", response_model=List[Task])
+async def get_user_tasks(user_id: int):
+    user_tasks = []
+    for task in tasks:
+        if task.id == user_id:
+            user_tasks.append(task)
+    if not user_tasks:
+        raise HTTPException(status_code=404, detail="User tasks not found")
+    return user_tasks
+
 @app.get("/tasks/", response_model=List[Task])
 async def get_tasks():
     return tasks
