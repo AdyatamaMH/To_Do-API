@@ -1,11 +1,14 @@
 # To_Do-API
 ## Endpoints
 
-- **GET /tasks/**: Retrieves all tasks.
-- **GET /tasks/{task_id}**: Retrieves a task by ID.
-- **POST /tasks/**: Creates a new task.
-- **PUT /tasks/{task_id}**: Updates an existing task.
-- **DELETE /tasks/{task_id}**: Deletes a task by ID.
+- **Register**: `POST /register/`
+- **Login**: `POST /login/`
+- **Get Tasks**: `GET /tasks/`
+- **Get Task by ID**: `GET /tasks/{task_id}`
+- **Create Task**: `POST /tasks/`
+- **Update Task**: `PUT /tasks/{task_id}`
+- **Delete Task**: `DELETE /tasks/{task_id}`
+
 
 ## Request and Response Format
 
